@@ -20,8 +20,16 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of response?.results; let i = index">
-      <td>{{ user.uuid }}</td>
-      <td><img [src]="user.imageUrl" [alt]="user.firstName" /></td>
+      <td>{{ user.uuid.substr(0, 8) }}</td>
+      <td>
+        <img
+          [src]="user.imageUrl"
+          [alt]="user.firstName"
+          style="border-radius: 50%"
+          height="45"
+          width="45"
+        />
+      </td>
       <td>{{ user.firstName }}{{ user.lastName }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.address }}</td>
